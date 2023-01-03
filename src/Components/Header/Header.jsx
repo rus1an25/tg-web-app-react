@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <div className={style.Header}>
             <Button tg={tg} />
-            <span>{tg.initDataUnsafe.user.userName}</span>
+            <span>{tg.initDataUnsafe?.user?.username}</span>
         </div>
     )
 };
