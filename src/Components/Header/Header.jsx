@@ -2,12 +2,12 @@ import React from "react";
 import style from './Header.module.css';
 import Button from "../Button/Button";
 
-const Header = () => {
-    const tg = window.Telegram.WebApp;
+const Header = (props) => {
+    console.log(props.tg)
     return (
         <div className={style.Header}>
-            <Button tg={tg} />
-            <span>{tg.initDataUnsafe?.user?.username}</span>
+            <Button tg={props.tg} />
+            <span>{props.tg.initDataUnsafe?.user?.username}</span>
         </div>
     )
 };
