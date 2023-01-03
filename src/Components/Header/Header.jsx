@@ -6,7 +6,7 @@ const Header = (props) => {
     const tg = window.Telegram.WebApp;
     return (
         <div className={style.Header}>
-            <Button tg={props.tg} />
+            <Button tg={tg} />
             <span>User name: {tg.initDataUnsafe?.user?.username}</span>
         </div>
     )
