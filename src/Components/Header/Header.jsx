@@ -7,7 +7,7 @@ const Header = (props) => {
     return (
         <div className={style.Header}>
             <Button tg={props.tg} />
-            <span>{props.tg.initDataUnsafe?.user?.username}</span>
+            <span>User name: {props.tg.initDataUnsafe?.user?.username}</span>
         </div>
     )
 };
