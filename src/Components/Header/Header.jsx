@@ -3,11 +3,11 @@ import style from './Header.module.css';
 import Button from "../Button/Button";
 
 const Header = (props) => {
-    console.log(props.tg)
+    const tg = window.Telegram.WebApp;
     return (
         <div className={style.Header}>
             <Button tg={props.tg} />
-            <span>User name: {props.tg.initDataUnsafe?.user?.username}</span>
+            <span>User name: {tg.initDataUnsafe?.user?.username}</span>
         </div>
     )
 };
