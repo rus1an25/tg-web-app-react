@@ -1,0 +1,6 @@
+.Button {
+    cursor: pointer;
+    color: var(--tg-theme-button-text-color);
+    background-color: var(--tg-theme-button-color);
+    padding: 1rem 2rem;
+}
