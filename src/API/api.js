@@ -7,7 +7,7 @@ const instance = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     withCredentials: true,
     headers: {
-        'Access-Control-Allow-Origin': 'https://symphonious-paprenjak-fac495.netlify.app',
+        'Access-Control-Allow-Origin': 'https://api.themoviedb.org/3',
         'Access-Control-Allow-Credentials': true,
         'Access-Control-Allow-Headers': '*',
         'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE, OPTIONS'
