@@ -4,7 +4,14 @@ const API_KEY = '0471cac914f115a568e4ebde8feb5fd4';
 let lang = 'en-EN';
 
 const instance = axios.create({
-    baseURL: 'https://api.themoviedb.org/3'
+    baseURL: 'https://api.themoviedb.org/3',
+    withCredentials: true,
+    headers: {
+        'Access-Control-Allow-Origin': 'https://symphonious-paprenjak-fac495.netlify.app',
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE, OPTIONS'
+    }
 });
 
 export const requestToAPI = {
