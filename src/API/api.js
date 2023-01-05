@@ -6,6 +6,9 @@ let lang = 'en-EN';
 const instance = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     withCredentials: true,
+    params: {
+        api_key: '0471cac914f115a568e4ebde8feb5fd4'
+    },
     headers: {
         'Access-Control-Allow-Origin': 'https://api.themoviedb.org/3',
         'Access-Control-Allow-Credentials': true,
