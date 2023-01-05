@@ -1,16 +1,35 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {requestToAPI} from "../../API/api";
 
-const toInitialApp = createSlice({
+export const fetchCGenres = createAsyncThunk(
+    'initApplication/fetchCategories',
+    async function() {
+        const response = await requestToAPI.getGenres();
+        return response;
+    });
+
+const toInitializeApp = createSlice({
     name: 'initApplication',
     initialState: {
-        isInitApp: false
+        listGenres: [],
+        status: null,
+        error: null
     },
-    reducers: {
-        toInitApp(state, action) {
-            state.isInitApp = action.payload;
+    extraReducers: {
+        [fetchCGenres.pending]: (state) => {
+            state.status = 'pending';
+            state.error = null;
+        },
+        [fetchCGenres.fulfilled]: (state, action) => {
+            state.status = 'resolved';
+            state.listGenres = action.payload.genres;
+        },
+        [fetchCGenres.rejected]: (state, action) => {
+            state.status = 'rejected';
+            state.error = true;
         }
     }
 });
 
-export default toInitialApp.reducer;
-export const {toInitApp} = toInitialApp.actions;
+export default toInitializeApp.reducer;
+// export const {toInitApp} = toInitializeApp.actions;
