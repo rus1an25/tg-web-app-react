@@ -8,13 +8,14 @@ const instance = axios.create({
     withCredentials: true,
     params: {
         api_key: '0471cac914f115a568e4ebde8feb5fd4'
-    },
-    headers: {
-        'Access-Control-Allow-Origin': 'https://api.themoviedb.org/3',
-        'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Headers': '*',
-        'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE, OPTIONS'
     }
+    // ,
+    // headers: {
+    //     'Access-Control-Allow-Origin': 'https://api.themoviedb.org/3',
+    //     'Access-Control-Allow-Credentials': true,
+    //     'Access-Control-Allow-Headers': '*',
+    //     'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE, OPTIONS'
+    // }
 });
 
 export const requestToAPI = {
