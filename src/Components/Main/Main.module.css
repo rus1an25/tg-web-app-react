@@ -1,6 +1,6 @@
 .Main {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 10fr 1fr;
     margin-bottom: 0;
     height: 100vh;
