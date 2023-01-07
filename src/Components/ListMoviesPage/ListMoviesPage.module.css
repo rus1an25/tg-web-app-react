@@ -12,7 +12,6 @@ h2, p {
     justify-content: center;
     align-content: stretch;
     align-items: center;
-    width: 85%;
     height: 85vh;
     margin-right: 3rem;
     transition: all .5s ease;
@@ -21,8 +20,6 @@ h2, p {
 
 .List_movies {
     overflow-y: scroll;
-    width: 120%;
-    /*height: 70vh;*/
 }
 
 .List_item {

@@ -1,9 +1,4 @@
-h1 {
-    display: block;
-}
-
 .Year, .hidden {
-    /*border: 1px solid white;*/
     position: absolute;
     top: 0;
     display: flex;
@@ -16,7 +11,7 @@ h1 {
     height: 85vh;
     margin-right: 3rem;
     transition: all .5s ease;
-    grid-column: 1/2;
+    grid-column: 2/3;
 }
 
 .Year_list {
