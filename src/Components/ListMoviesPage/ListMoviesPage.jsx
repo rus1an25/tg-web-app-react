@@ -21,10 +21,6 @@ const ListMoviesPage = () => {
         return arr;
     }
 
-    useEffect(() => {
-        console.log(listMovies)
-    }, [listMovies])
-
     return (
         <div className={navigation !== 4 ? style.hidden : style.MoviesPage}>
             <div className={style.List_movies}>
@@ -43,7 +39,7 @@ const ListMoviesPage = () => {
                             <div className={style.Stars}>
                                 {
                                     numberToArray(10).map(index => {
-                                        return <span className={index<=vote_average?style.rated:style.no_rated}><FontAwesomeIcon icon={faStar} /></span>
+                                        return <span key={index} className={index<=vote_average?style.rated:style.no_rated}><FontAwesomeIcon icon={faStar} /></span>
                                     })
                                 }
                             </div>

@@ -6,16 +6,27 @@ const Preloader = () => {
     const fetchingStatusInit = useSelector(state => state.initApp.status);
     const fetchingStatusContent = useSelector(state => state.content.status);
 
-    const [isEnablePreload, setIsEnablePreload] = useState('pending');
+    const [enableInitPreload, setEnableInitPreload] = useState('pending');
+    const [enableContentPreload, setEnableContentPreload] = useState('pending');
 
     useEffect(() => {
-        if (fetchingStatusInit === 'resolved' || fetchingStatusContent === 'resolved') {
-            setIsEnablePreload('resolved');
+        if (fetchingStatusInit === 'resolved') {
+            setTimeout(() => setEnableInitPreload('resolved'), 1000)
+        } else {
+            setEnableInitPreload('pending');
         }
-    }, [fetchingStatusInit, fetchingStatusContent])
+    }, [fetchingStatusInit])
+
+    useEffect(() => {
+        if (fetchingStatusContent === 'resolved') {
+            setTimeout(() => setEnableContentPreload('resolved'), 1000)
+        } else {
+            setEnableContentPreload('pending');
+        }
+    }, [fetchingStatusContent])
 
     return (
-        <div className={isEnablePreload === 'pending' ? style.Preloader : style.Preloader_hidden}>
+        <div className={enableInitPreload === 'pending' || enableContentPreload === 'pending' ? style.Preloader : style.Preloader_hidden}>
             <img src="./preloader.svg" alt="Load..."/>
         </div>
     )

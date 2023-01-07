@@ -30,7 +30,6 @@ const toInitializeApp = createSlice({
             state.error = null;
         },
         [fetchCGenres.fulfilled]: (state, action) => {
-            console.log(action.payload.genres)
             state.status = 'resolved';
             state.listGenres = action.payload.genres;
         },
