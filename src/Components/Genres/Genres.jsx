@@ -24,16 +24,13 @@ const Genres = () => {
             </span>
             {
                 listGenres.map(genre => {
-                    // listGenres.forEach(obj => {
-                    //     console.log(Object.keys(obj).includes(genre))
-                    // });
                     return (
                         <span
                             key={genre.id}
                             onClick={() => setGenreId(genre.id)}
                             className={genre.id !== genreId ? style.no_active : style.active}
                         >
-                        {genre.name} {genre.id}
+                        {genre.name}
                         </span>
                     )
                 })
