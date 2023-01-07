@@ -16,6 +16,10 @@ const Navigation = () => {
         dispatch(setNavigation(currentIndex));
     }, [currentIndex])
 
+    useEffect(() => {
+        setCurrentIndex(navigation);
+    }, [navigation])
+
     return (
         <div className={style.Navigation}>
             {

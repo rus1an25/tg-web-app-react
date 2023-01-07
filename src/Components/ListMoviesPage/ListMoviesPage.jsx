@@ -1,8 +1,8 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import style from './ListMoviesPage.module.css';
 import {useSelector} from "react-redux";
-import {faCoffee, faStar} from "@fortawesome/free-solid-svg-icons";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 
 const ListMoviesPage = () => {
     const POSTER_BASE_URL = 'https://image.tmdb.org/t/p';
