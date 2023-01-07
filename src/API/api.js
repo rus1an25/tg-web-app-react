@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const API_KEY = '0471cac914f115a568e4ebde8feb5fd4';
+const GET_GENRES = '/genre/movie/list';
 let lang = 'en-EN';
 
 const instance = axios.create({
@@ -18,14 +19,13 @@ const instance = axios.create({
 });
 
 export const requestToAPI = {
-    getGenres () {
-        return instance.get(`/genre/movie/list?api_key=${API_KEY}&language=${lang}`)
+    getGenres (data) {
+        return instance.get(data)
             .then(response => response.data)
     },
 
-    getMovies (URL) {
-        console.log('getMovies', URL)
-        return instance.get(URL)
+    getMovies (request) {
+        return instance.get(request)
             .then(response => response.data)
     }
 };

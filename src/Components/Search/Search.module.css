@@ -1,6 +1,12 @@
 .Search {
     background-color: darkgray;
+    color: #ffffff;
     cursor: pointer;
+    font-size: 1.45rem;
+    font-weight: 900;
     text-align: center;
+    text-shadow: 0 0 2px rgba(0,0,0,.5);
     padding: 1rem 2rem;
+    height: 100%;
+    grid-column: 1/4;
 }

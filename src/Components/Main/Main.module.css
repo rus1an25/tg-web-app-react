@@ -1,1 +1,17 @@
-.Main {}
+.Main {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 10fr 1fr;
+    margin-bottom: 0;
+    height: 100vh;
+}
+
+.Main_content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}

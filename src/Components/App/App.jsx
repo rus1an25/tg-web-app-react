@@ -7,17 +7,18 @@ import {fetchMovies} from "../../Redux/Reducers/getContent_reducer";
 
 const App = () => {
     const dispatch = useDispatch();
-    const listGenres = useSelector(state => state.initApp.listGenres);
+    const genresRequest = useSelector(state => state.initApp.genresRequest);
+    const baseRequest = useSelector(state => state.initApp.baseRequest);
+    const list = useSelector(state => state.content.listMovies);
 
     useEffect(() => {
-        console.log('UseEffect')
-        dispatch(fetchCGenres());
-        dispatch(fetchMovies());
+        dispatch(fetchCGenres(genresRequest));
+        dispatch(fetchMovies(baseRequest));
     }, []);
 
     return (
         <div className={style.App}>
-            <Main listGenres={listGenres} />
+            <Main />
         </div>
     )
 }

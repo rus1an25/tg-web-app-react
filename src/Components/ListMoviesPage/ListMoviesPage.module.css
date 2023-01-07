@@ -1,0 +1,94 @@
+h2, p {
+    text-align: left;
+    width: 80%;
+}
+
+.MoviesPage, .hidden {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    width: 85%;
+    height: 85vh;
+    margin-right: 3rem;
+    transition: all .5s ease;
+    grid-column: 2/3;
+}
+
+.List_movies {
+    overflow-y: scroll;
+    width: 120%;
+    /*height: 70vh;*/
+}
+
+.List_item {
+    background-color: #444444;
+    border: 2px solid #222222;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+
+.List_Image {
+    margin-bottom: 2rem;
+}
+
+.List_Image img {
+    width: 100%;
+}
+
+.MoviesPage span {
+    cursor: pointer;
+    display: block;
+    margin-bottom: .75rem;
+}
+
+.Stars {
+    margin-bottom: .5rem;
+    width: 80%;
+}
+
+.Genres {
+    margin-bottom: 1rem;
+    width: 80%;
+}
+
+.MoviesPage .Genres span {
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+.Stars span {
+    display: inline-block;
+}
+
+.hidden {
+    z-index: -1;
+    opacity: 0;
+    margin-right: 0;
+    transition: all .25s ease;
+}
+
+.active {
+    color: orange;
+}
+
+.no_active {
+    color: #ffffff;
+}
+
+.rated {
+    color: orange;
+}
+
+.no_rated {
+    color: #cccccc;
+}

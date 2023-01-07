@@ -1,16 +1,10 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {requestToAPI} from "../../API/api";
 
-let URL = '/discover/movie?api_key=0471cac914f115a568e4ebde8feb5fd4&language=en-EN&sort_by=vote_average.desc&page=1';
-
-const generateURL = (genreId, page=1) => {
-    URL = `discover/movie?api_key=0471cac914f115a568e4ebde8feb5fd4&language=en-EN&with_genres=${genreId}&page=${page}`;
-}
-
 export const fetchMovies = createAsyncThunk(
     'getContent/fetchMovies',
-    async function() {
-        const response = await requestToAPI.getMovies(URL);
+    async function(request) {
+        const response = await requestToAPI.getMovies(request);
         return response;
     });
 
@@ -18,15 +12,21 @@ const getContent = createSlice({
     name: 'getContent',
     initialState: {
         genreId: null,
+        rate: null,
+        year: null,
         listMovies: [],
         status: null,
         error: null
     },
     reducers: {
-        setGenre(state, action) {
-            console.log('REDUCER', action.payload)
-            generateURL(action.payload)
+        addGenre(state, action) {
             state.genreId = action.payload;
+        },
+        setRate(state, action) {
+            state.rate = action.payload;
+        },
+        addYear(state, action) {
+            state.year = action.payload;
         }
     },
     extraReducers: {
@@ -46,4 +46,6 @@ const getContent = createSlice({
 });
 
 export default getContent.reducer;
-export const {setGenre} = getContent.actions;
+export const {addGenre} = getContent.actions;
+export const {setRate} = getContent.actions;
+export const {addYear} = getContent.actions;
