@@ -17,24 +17,26 @@ const Genres = () => {
     return (
         <div className={navigation !== 1 ? style.hidden : style.Genres}>
             <h1>Choose A Genres</h1>
-            <span
-                onClick={() => setGenreId(null)}
-                className={genreId !== null ? style.no_active : style.active}
-            >All
+            <div className={style.Genres_list}>
+                           <span
+                               onClick={() => setGenreId(null)}
+                               className={genreId !== null ? style.no_active : style.active}
+                           >All
             </span>
-            {
-                listGenres.map(genre => {
-                    return (
-                        <span
-                            key={genre.id}
-                            onClick={() => setGenreId(genre.id)}
-                            className={genre.id !== genreId ? style.no_active : style.active}
-                        >
+                {
+                    listGenres.map(genre => {
+                        return (
+                            <span
+                                key={genre.id}
+                                onClick={() => setGenreId(genre.id)}
+                                className={genre.id !== genreId ? style.no_active : style.active}
+                            >
                         {genre.name}
                         </span>
-                    )
-                })
-            }
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 };
