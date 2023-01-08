@@ -10,20 +10,20 @@ h2, p {
 .MoviesPage, .hidden {
     position: absolute;
     top: 0;
+    width: 80%;
+    height: 80vh;
+    margin-right: 3rem;
+    transition: all .5s ease;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-content: stretch;
     align-items: center;
-    height: 85vh;
-    margin-right: 3rem;
-    transition: all .5s ease;
-    grid-column: 2/3;
 }
 
 .List_movies {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .List_item {

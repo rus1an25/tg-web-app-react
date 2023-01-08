@@ -1,23 +1,34 @@
 .Rating, .hidden {
     position: absolute;
     top: 0;
-    width: 85%;
-    height: 85vh;
+    width: 80%;
+    height: 80vh;
     margin-right: 3rem;
     transition: all .5s ease;
-    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+
+.Rating_list {
+    overflow-y: auto;
+    text-align: center;
+    width: 50%;
+    height: 50vh;
 }
 
 .Rate {
     font-size: 1.15rem;
+    margin-bottom: .75rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-content: stretch;
     align-items: center;
-    width: 100%;
-    margin-bottom: .75rem;
 }
 
 .Rate_number {

@@ -1,21 +1,20 @@
 .Year, .hidden {
     position: absolute;
     top: 0;
+    width: 80%;
+    height: 80vh;
+    margin-right: 3rem;
+    transition: all .5s ease;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-content: stretch;
     align-items: center;
-    width: 85%;
-    height: 85vh;
-    margin-right: 3rem;
-    transition: all .5s ease;
-    grid-column: 2/3;
 }
 
 .Year_list {
-    overflow-y: scroll;
+    overflow-y: auto;
     text-align: center;
     width: 50%;
     height: 50vh;

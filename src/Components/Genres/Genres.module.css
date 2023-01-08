@@ -1,11 +1,12 @@
 .Genres, .hidden {
     position: absolute;
     top: 0;
-    width: 85%;
-    height: 85vh;
+    width: 80%;
+    height: 80vh;
     margin-right: 3rem;
     transition: all .5s ease;
     grid-column: 2/3;
+    border-bottom: 1px solid white;
 }
 
 .Genres span {

@@ -1,17 +1,15 @@
 .Movie, .hidden {
     position: absolute;
     top: 0;
-    width: 85%;
-    height: 85vh;
+    width: 80%;
+    height: 80vh;
     margin-right: 3rem;
     transition: all .5s ease;
-    display: grid;
-    grid-template-columns: 3fr 5fr;
-    grid-column-gap: 2rem;
-    grid-auto-flow: column;
+    overflow-y: scroll;
 }
 
-.Movie_poster img {
+.Movie_info,
+.Movie_poster {
     width: 100%;
 }
 
@@ -24,6 +22,15 @@
     align-items: flex-start;
 }
 
+.Movie_poster {
+    margin-bottom: 1rem;
+}
+
+.Movie_poster img {
+    margin: 0 auto;
+    width: 80%;
+}
+
 .Movie_info h2,
 .Movie_info p,
 .Movie_info span,
@@ -32,7 +39,7 @@
     display: inline-block;
     text-align: left;
     margin-bottom: 1rem;
-    width: 100%;
+    width: 80%;
 }
 
 .Movie_info span {

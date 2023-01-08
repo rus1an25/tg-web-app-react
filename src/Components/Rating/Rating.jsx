@@ -12,25 +12,35 @@ const Rating = () => {
         dispatch(setRate(rating));
     }, [rating]);
 
+    const numberToArray = number => {
+        let arr = [];
+        for (let i = 1, j = 0; i <= number; i++, j++) {
+            arr[j] = i;
+        }
+        return arr;
+    }
+
     return (
         <div className={navigation !== 2 ? style.hidden : style.Rating}>
             <h1>Choose A Rating</h1>
-            {
-                [1,2,3,4,5,6,7,8,9,10].map(rate => {
-                    return <div
-                        key={rate}
-                        className={style.Rate}
-                    >
-                        <span className={style.Rate_number}>{rate}</span>
-                        <span
-                            id={rate}
-                            className={rate === rating ? style.Dot_active : style.Dot}
-                            onClick={(e) => setRating(parseInt(e.target.id))}
+            <div className={style.Rating_list}>
+                {
+                    numberToArray(10).map(rate => {
+                        return <div
+                            key={rate}
+                            className={style.Rate}
                         >
+                            <span className={style.Rate_number}>{rate}</span>
+                            <span
+                                id={rate}
+                                className={rate === rating ? style.Dot_active : style.Dot}
+                                onClick={(e) => setRating(parseInt(e.target.id))}
+                            >
                         </span>
-                    </div>
-                })
-            }
+                        </div>
+                    })
+                }
+            </div>
         </div>
     )
 };
