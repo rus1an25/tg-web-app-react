@@ -1,7 +1,7 @@
 .Movie, .hidden {
     position: absolute;
     top: 0;
-    width: 80%;
+    width: 90%;
     height: 85vh;
     margin-right: 3rem;
     transition: all .5s ease;
@@ -28,7 +28,7 @@
 
 .Movie_poster img {
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
 }
 
 .Movie_info h2,
@@ -39,7 +39,7 @@
     display: inline-block;
     text-align: left;
     margin-bottom: 1rem;
-    width: 80%;
+    width: 90%;
 }
 
 .Movie_info span {
