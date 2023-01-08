@@ -60,7 +60,7 @@ const Movie = () => {
                             })}</p> :
                             null
                     }
-                    <a href={movie.homepage}>{movie.homepage}</a>
+                    <a href={movie.homepage}>Watch Online</a>
                 </div>
             </div>
         )
