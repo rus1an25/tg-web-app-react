@@ -12,7 +12,7 @@ import Movie from "../Movie/Movie";
 const Main = () => {
     return (
         <div className={style.Main}>
-            {/*<Preloader />*/}
+            <Preloader />
             <Navigation />
             <div className={style.Main_content}>
                 <Genres />
