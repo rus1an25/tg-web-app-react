@@ -2,11 +2,9 @@
     position: absolute;
     top: 0;
     width: 80%;
-    height: 80vh;
+    height: 85vh;
     margin-right: 3rem;
     transition: all .5s ease;
-    grid-column: 2/3;
-    border-bottom: 1px solid white;
 }
 
 .Genres span {

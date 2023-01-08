@@ -2,13 +2,13 @@
     position: absolute;
     top: 0;
     width: 80%;
-    height: 80vh;
+    height: 85vh;
     margin-right: 3rem;
     transition: all .5s ease;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: stretch;
     align-items: center;
 }
@@ -17,12 +17,12 @@
     overflow-y: auto;
     text-align: center;
     width: 50%;
-    height: 50vh;
+    height: 80%;
 }
 
 .Rate {
     font-size: 1.15rem;
-    margin-bottom: .75rem;
+    margin-bottom: .65rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
