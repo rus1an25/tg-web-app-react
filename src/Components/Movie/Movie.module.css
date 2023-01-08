@@ -34,7 +34,7 @@
 .Movie_info h2,
 .Movie_info p,
 .Movie_info span,
-.Movie_info a {
+.Movie_info .Movie_link {
     color: #cfcfcf;
     display: inline-block;
     text-align: left;
@@ -46,7 +46,7 @@
     margin-bottom: .75rem;
 }
 
-.Movie_info a {
+.Movie_info .Movie_link {
     color: orange;
 }
 

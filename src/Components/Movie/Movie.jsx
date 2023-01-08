@@ -60,7 +60,14 @@ const Movie = () => {
                             })}</p> :
                             null
                     }
-                    <a href={movie.homepage}>Watch Online</a>
+                    {
+                        movie.homepage ?
+                        <a href={movie.homepage} className={style.Movie_link} target="_blank" rel="noopener noreferrer">
+                            Watch Online
+                        </a>
+                        :
+                        null
+                    }
                 </div>
             </div>
         )
