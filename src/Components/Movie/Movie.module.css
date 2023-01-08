@@ -1,7 +1,7 @@
 .Movie, .hidden {
     position: absolute;
     top: 0;
-    width: 90%;
+    width: 85%;
     height: 85vh;
     margin-right: 3rem;
     transition: all .5s ease;
