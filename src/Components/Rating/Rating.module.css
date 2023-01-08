@@ -17,12 +17,13 @@
     overflow-y: auto;
     text-align: center;
     width: 50%;
-    height: 80%;
+    height: 75%;
+    margin-top: 1rem;
 }
 
 .Rate {
     font-size: 1.15rem;
-    margin-bottom: .65rem;
+    margin-bottom: .75rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
