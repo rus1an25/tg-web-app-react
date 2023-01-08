@@ -8,8 +8,12 @@ const Navigation = () => {
     const [currentIndex, setCurrentIndex] = useState(1);
     const navigation = useSelector(state => state.initApp.navigation);
 
-    const addEvent = (e, i) => {
-        setCurrentIndex(i);
+    const numberToArray = number => {
+        let arr = [];
+        for (let i = 1, j = 0; i <= number; i++, j++) {
+            arr[j] = i;
+        }
+        return arr;
     }
 
     useEffect(() => {
@@ -23,10 +27,10 @@ const Navigation = () => {
     return (
         <div className={style.Navigation}>
             {
-                [1, 2, 3, 4].map(i => <div
+                numberToArray(4).map(i => <div
                     key={i}
                     id={i}
-                    onClick={e => addEvent(e, i)}
+                    onClick={() => setCurrentIndex(i)}
                     className={i !== navigation ? style.Dot : style.Dot_active}>
                 </div>)
             }

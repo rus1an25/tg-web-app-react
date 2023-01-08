@@ -7,6 +7,7 @@ import Year from "../Year/Year";
 import Navigation from "../Navigation/Navigation";
 import ListMoviesPage from "../ListMoviesPage/ListMoviesPage";
 import Preloader from "../Preloader/Preloader";
+import Movie from "../Movie/Movie";
 
 const Main = () => {
     return (
@@ -18,6 +19,7 @@ const Main = () => {
                 <Rating />
                 <Year />
                 <ListMoviesPage />
+                <Movie />
             </div>
             <Search />
         </div>

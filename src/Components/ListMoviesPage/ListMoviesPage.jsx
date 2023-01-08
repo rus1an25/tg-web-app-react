@@ -1,25 +1,25 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import style from './ListMoviesPage.module.css';
-import {useSelector} from "react-redux";
-import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {useDispatch, useSelector} from "react-redux";
+import {setNavigation} from "../../Redux/Reducers/initApp_reducer";
+import {fetchMovieInfo, fetchMovies} from "../../Redux/Reducers/getContent_reducer";
+import Votes from "../Votes/Votes";
 
 const ListMoviesPage = () => {
+    const dispatch = useDispatch();
     const POSTER_BASE_URL = 'https://image.tmdb.org/t/p';
     const POSTER_BASE_SIZE = '/w500';
     const PATH_TO_PUBLIC = './no_poster.png';
 
     const navigation = useSelector(state => state.initApp.navigation);
-    const listMovies = useSelector(state => state.content.listMovies);
     const listGenres = useSelector(state => state.initApp.listGenres);
+    const listMovies = useSelector(state => state.content.listMovies);
 
-    const numberToArray = number => {
-        let arr = [];
-        for (let i = 1, j = 0; i <= number; i++, j++) {
-            arr[j] = i;
-        }
-        return arr;
-    }
+    const getMovieInfo = (movieId) => {
+        const MOVIE_URL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=0471cac914f115a568e4ebde8feb5fd4&language=en-US`;
+        dispatch(setNavigation(5));
+        dispatch(fetchMovieInfo(MOVIE_URL));
+    };
 
     return (
         <div className={navigation !== 4 ? style.hidden : style.MoviesPage}>
@@ -35,14 +35,9 @@ const ListMoviesPage = () => {
                                     } alt=""
                                 />
                             </div>
-                            <h2>{movie.title}</h2>
-                            <div className={style.Stars}>
-                                {
-                                    numberToArray(10).map(index => {
-                                        return <span key={index} className={index<=vote_average?style.rated:style.no_rated}><FontAwesomeIcon icon={faStar} /></span>
-                                    })
-                                }
-                            </div>
+                            <h2 onClick={() => getMovieInfo(movie.id)}>{movie.original_title}</h2>
+                            <div className={style.Release}><span>Release: {movie.release_date}</span></div>
+                            <Votes vote_average={movie.vote_average} />
                             <div className={style.Genres}>
                                 {
                                     movie.genre_ids.map(id => {

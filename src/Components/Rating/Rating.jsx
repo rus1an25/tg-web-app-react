@@ -12,10 +12,6 @@ const Rating = () => {
         dispatch(setRate(rating));
     }, [rating]);
 
-    const addEvent = (targetId) => {
-        setRating(parseInt(targetId));
-    }
-
     return (
         <div className={navigation !== 2 ? style.hidden : style.Rating}>
             <h1>Choose A Rating</h1>
@@ -29,7 +25,7 @@ const Rating = () => {
                         <span
                             id={rate}
                             className={rate === rating ? style.Dot_active : style.Dot}
-                            onClick={(e) => addEvent(e.target.id)}
+                            onClick={(e) => setRating(parseInt(e.target.id))}
                         >
                         </span>
                     </div>

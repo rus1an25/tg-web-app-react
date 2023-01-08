@@ -1,0 +1,19 @@
+.Votes {
+    margin-bottom: .5rem;
+    width: 80%;
+}
+
+.Votes .rated,
+.Votes .no_rated {
+    cursor: default;
+    display: inline-block;
+    width: auto;
+}
+
+.Votes .rated {
+    color: orange;
+}
+
+.Votes .no_rated {
+    color: #cccccc;
+}

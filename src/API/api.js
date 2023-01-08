@@ -19,13 +19,23 @@ const instance = axios.create({
 });
 
 export const requestToAPI = {
-    getGenres (data) {
-        return instance.get(data)
+    getLanguages (url) {
+        return instance.get(url)
             .then(response => response.data)
     },
 
-    getMovies (request) {
-        return instance.get(request)
+    getGenres (url) {
+        return instance.get(url)
+            .then(response => response.data)
+    },
+
+    getMovies (url) {
+        return instance.get(url)
+            .then(response => response.data)
+    },
+
+    getMovieInfo (url) {
+        return instance.get(url)
             .then(response => response.data)
     }
 };

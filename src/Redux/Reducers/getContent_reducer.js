@@ -8,6 +8,13 @@ export const fetchMovies = createAsyncThunk(
         return response;
     });
 
+export const fetchMovieInfo = createAsyncThunk(
+    'getContent/fetchMovieInfo',
+    async function(request) {
+        const response = await requestToAPI.getMovieInfo(request);
+        return response;
+    });
+
 const getContent = createSlice({
     name: 'getContent',
     initialState: {
@@ -15,6 +22,7 @@ const getContent = createSlice({
         rate: null,
         year: null,
         listMovies: [],
+        movie: null,
         status: null,
         error: null
     },
@@ -38,7 +46,19 @@ const getContent = createSlice({
             state.status = 'resolved';
             state.listMovies = action.payload.results;
         },
-        [fetchMovies.rejected]: (state, action) => {
+        [fetchMovies.rejected]: (state) => {
+            state.status = 'rejected';
+            state.error = true;
+        },
+        [fetchMovieInfo.pending]: (state) => {
+            state.status = 'pending';
+            state.error = null;
+        },
+        [fetchMovieInfo.fulfilled]: (state, action) => {
+            state.status = 'resolved';
+            state.movie = action.payload;
+        },
+        [fetchMovieInfo.rejected]: (state) => {
             state.status = 'rejected';
             state.error = true;
         }

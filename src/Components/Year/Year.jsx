@@ -13,9 +13,12 @@ const Year = () => {
         dispatch(addYear(year));
     })
 
-    const years = [];
-    for (let i = 1900, j = 0; i <= 2023; i++, j++) {
-        years[j] = i;
+    const setYearArray = (begin, end) => {
+        const arr = [];
+        for (let i = begin, j = 0; i <= end; i++, j++) {
+            arr[j] = i;
+        }
+        return arr;
     }
 
     return (
@@ -23,7 +26,7 @@ const Year = () => {
             <h1>Choose A Year</h1>
             <div className={style.Year_list}>
                 {
-                    years.reverse().map(yearNumber => {
+                    setYearArray(1900, currentYear).reverse().map(yearNumber => {
                         return <span
                             key={yearNumber}
                             className={year === yearNumber ? style.Year_number_active : style.Year_number}
